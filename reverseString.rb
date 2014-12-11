@@ -28,7 +28,6 @@ class ReverseString
   def print(someThing)
     puts someThing
   end
-
 end
 
 reverseString = ReverseString.new
