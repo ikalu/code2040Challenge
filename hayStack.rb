@@ -19,10 +19,10 @@ class Haystack
   end
 
   def validateNeedle
-    foundNeedle = HTTParty.post( "http://challenge.code2040.org/api/validateneedle",
+    result = HTTParty.post( "http://challenge.code2040.org/api/validateneedle",
                                    :body => { "token" => "8EBDqKCWgK", "needle" => findNeedle }.to_json,
                                    :headers => { 'Content-Type' => 'application/json' } )
-    print(foundNeedle)
+    print(result)
   end
 
   def print(someThing)
