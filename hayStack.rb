@@ -15,7 +15,6 @@ class Haystack
     print(collection)
     haystack = collection["haystack"]
     needle = collection["needle"]
-    print(haystack.index(needle))
     haystack.index(needle)
   end
 
