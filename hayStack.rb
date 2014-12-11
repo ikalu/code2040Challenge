@@ -16,7 +16,7 @@ class Haystack
     haystack = collection["haystack"]
     needle = collection["needle"]
     print(haystack.index(needle))
-    haystack.index(needle).to_i
+    haystack.index(needle)
   end
 
   def validateNeedle
