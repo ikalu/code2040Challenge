@@ -14,27 +14,22 @@ class ReverseString
     word = getString
     print(word)
     word.to_s.reverse!
+    print(word)
+    word.to_s
   end
 
   def validateString
     reversedString = HTTParty.post( "http://challenge.code2040.org/api/validatestring",
                                    :body => { "token" => "8EBDqKCWgK", "string" => reverseTheString }.to_json,
                                    :headers => { 'Content-Type' => 'application/json' } )
-    reversedString
+    print(reversedString)
   end
 
   def print(someThing)
     puts someThing
-#    puts reverseTheString
-#    puts validateString
   end
 
 end
 
-
 reverseString = ReverseString.new
-
-#puts reverseString.getString
-puts reverseString.reverseTheString
-#puts reverseString.validateString
-#reverseString.print
+reverseString.validateString
