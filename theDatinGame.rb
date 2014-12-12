@@ -1,6 +1,3 @@
-## WORK IN PROGRESS...
-#
-#
 require 'HTTParty'
 require 'date'
 
