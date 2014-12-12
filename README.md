@@ -1,6 +1,6 @@
 CODE2040 API Challenge
 ======================
-Doing this challenge was interesting; I learnt new things that I probably would not have as of today. In each of the stages ofthe challenge, I can boast of having learnt a thing or two.
+Doing this challenge was interesting; I learnt new things that I probably would not have as of today. In each of the stages of the challenge, I can boast of having learnt a thing or two.
 
 **In general, I tried to implement some design principles such as`SOLID principle` and `DRY principle`.**
 
@@ -8,7 +8,7 @@ Doing this challenge was interesting; I learnt new things that I probably would 
 
 Registration
 ------------
-This was very easy to `curl` in the commandline. However, converting the `curl` to its Ruby equivalent wasn't an easy feat. But I researched and found the `HTTParty gem`, which I studied and was able to implement. 
+This was very easy to `curl` in the terminal. However, converting the `curl` to its Ruby equivalent wasn't an easy feat. But I researched and found the `HTTParty gem`, which I studied and was able to implement. 
 
 Stage I
 -------
