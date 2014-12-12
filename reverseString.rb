@@ -2,7 +2,7 @@ require 'HTTParty'
 
 class ReverseString
 
-  def getString
+  def get_string
     string = HTTParty.post( "http://challenge.code2040.org/api/getstring", 
                            :body => { "token"=> "8EBDqKCWgK"}.to_json, 
                            :headers => { 'Content-Type' => 'application/json' } )
@@ -10,19 +10,17 @@ class ReverseString
     string["result"]
   end
 
-  def reverseTheString
-    word = getString
+  def reverse_the_string
+    word = get_string
     print(word)
     word.to_s.reverse!
-    print(word)
-    word.to_s
   end
 
-  def validateString
-    reversedString = HTTParty.post( "http://challenge.code2040.org/api/validatestring",
-                                   :body => { "token" => "8EBDqKCWgK", "string" => reverseTheString }.to_json,
+  def validate_string
+    result = HTTParty.post( "http://challenge.code2040.org/api/validatestring",
+                                   :body => { "token" => "8EBDqKCWgK", "string" => reverse_the_string }.to_json,
                                    :headers => { 'Content-Type' => 'application/json' } )
-    print(reversedString)
+    print(result)
   end
 
   def print(someThing)
@@ -30,5 +28,5 @@ class ReverseString
   end
 end
 
-reverseString = ReverseString.new
-reverseString.validateString
+result = ReverseString.new
+result.validate_string
