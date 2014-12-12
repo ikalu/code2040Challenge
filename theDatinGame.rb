@@ -1,9 +1,12 @@
+## WORK IN PROGRESS...
+#
+#
 require 'HTTParty'
-require 'time'
+require 'date'
 
 class DatingGame
 
-  def getDateStamp
+  def get_date_stamp
     stack = HTTParty.post( "http://challenge.code2040.org/api/time", 
                           :body => { "token"=> "8EBDqKCWgK"}.to_json, 
                           :headers => { 'Content-Type' => 'application/json' } )
@@ -11,26 +14,27 @@ class DatingGame
     stack["result"]
   end
 
-  def addInterval
+  def add_interval
     collection = getDateStamp
     print(collection)
-    date = collection["datestamp"]
+    date = collection["datestamp"].to_s
     interval = collection["interval"].to_s
-    replaceDefaultInterval(date, interval)
-  #  print(time)
-  #  print(interval)
-  #  print(time.gsub(/00.000/, interval))
+    #replaceDefaultInterval(date, interval)
+    a = DateTime.parse(date)
+    print(a)
+    print(a.offset )
+    print(a.zone)
   end
 
-  def replaceDefaultInterval(date, interval)
+  def replace_default_interval(date, interval)
     date.gsub(/00.000Z/, interval)
     newDateTime = Time.utc(date)
     ((newDateTime + 0.4).round.iso8601(3))
   end
 
-  def validateTime
+  def validate_time
     result = HTTParty.post( "http://challenge.code2040.org/api/validatetime",
-                                   :body => { "token" => "8EBDqKCWgK", "datestamp" => addInterval }.to_json,
+                                   :body => { "token" => "8EBDqKCWgK", "datestamp" => add_interval }.to_json,
                                    :headers => { 'Content-Type' => 'application/json' } )
     print(result)
   end
@@ -41,4 +45,4 @@ class DatingGame
 end
 
 game = DatingGame.new
-game.validateTime
+game.addInterval
