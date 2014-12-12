@@ -2,6 +2,10 @@ CODE2040 API Challenge
 ======================
 Doing this challenge was interesting; I learnt new things that I probably would not have as of today. In each of the stages ofthe challenge, I can boast of having learnt a thing or two.
 
+**In general, I tried to implement some design principles such as`SOLID principle` and `DRY principle`.**
+
+**Here are that things I learnt for each stage of this challenge;**
+
 Registration
 ------------
 This was very easy to `curl` in the commandline. However, converting the `curl` to its Ruby equivalent wasn't an easy feat. But I researched and found the `HTTParty gem`, I studied and was able to implement. 
@@ -27,4 +31,3 @@ Just like it said: "Dates are hard! Don't feel badly if you're scratching your h
 Before I solved the problem, I researched and learned about iso8601 and UNIX timestamps. And here is a summary of how I solved it; **ISO -> UNIX -> add Interval -> ISO**
 
 
-In general, I tried to implement some design principles such as`SOLID principle` and `DRY principle`.
