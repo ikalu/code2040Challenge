@@ -2,7 +2,7 @@ require 'HTTParty'
 
 class Haystack
 
-  def getCollection
+  def get_collection
     stack = HTTParty.post( "http://challenge.code2040.org/api/haystack", 
                           :body => { "token"=> "8EBDqKCWgK"}.to_json, 
                           :headers => { 'Content-Type' => 'application/json' } )
@@ -10,17 +10,17 @@ class Haystack
     stack["result"]
   end
 
-  def findNeedle
-    collection = getCollection
+  def find_needle
+    collection = get_collection
     print(collection)
     haystack = collection["haystack"]
     needle = collection["needle"]
     haystack.index(needle)
   end
 
-  def validateNeedle
+  def validate_needle
     result = HTTParty.post( "http://challenge.code2040.org/api/validateneedle",
-                                   :body => { "token" => "8EBDqKCWgK", "needle" => findNeedle }.to_json,
+                                   :body => { "token" => "8EBDqKCWgK", "needle" => find_needle }.to_json,
                                    :headers => { 'Content-Type' => 'application/json' } )
     print(result)
   end
@@ -31,4 +31,4 @@ class Haystack
 end
 
 haystack = Haystack.new
-haystack.validateNeedle
+haystack.validate_needle
