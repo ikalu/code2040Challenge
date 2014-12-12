@@ -2,7 +2,7 @@ require 'HTTParty'
 
 class Prefix
 
-  def getCollection
+  def get_collection
     stack = HTTParty.post( "http://challenge.code2040.org/api/prefix", 
                           :body => { "token"=> "8EBDqKCWgK"}.to_json, 
                           :headers => { 'Content-Type' => 'application/json' } )
@@ -10,29 +10,29 @@ class Prefix
     stack["result"]
   end
 
-  def findStrings
-    collection = getCollection
+  def find_strings
+    collection = get_collection
     print(collection)
     strings = collection["array"]
     pref = collection["prefix"]
-    arrayOfStrings = Array.new
-    putFoundStringsInArray(strings, pref, arrayOfStrings)
+    array_of_strings = Array.new
+    put_found_strings_in_array(strings, pref, array_of_strings)
   end
 
-  def putFoundStringsInArray(strings, pref, arrayOfStrings)
+  def put_found_strings_in_array(strings, pref, array_of_strings)
     strings.each do |string|
       if !string.start_with?(pref)
-        arrayOfStrings << string
+        array_of_strings << string
       end
     end
-    arrayOfStrings
+    array_of_strings
   end
 
-  def validatePrefix
-    foundStrings = HTTParty.post( "http://challenge.code2040.org/api/validateprefix",
-                                   :body => { "token" => "8EBDqKCWgK", "array" => findStrings }.to_json,
+  def validate_prefix
+    result = HTTParty.post( "http://challenge.code2040.org/api/validateprefix",
+                                   :body => { "token" => "8EBDqKCWgK", "array" => find_strings }.to_json,
                                    :headers => { 'Content-Type' => 'application/json' } )
-    print(foundStrings)
+    print(result)
   end
 
   def print(someThing)
@@ -41,4 +41,4 @@ class Prefix
 end
 
 prefix = Prefix.new
-prefix.validatePrefix
+prefix.validate_prefix
