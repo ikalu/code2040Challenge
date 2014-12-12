@@ -4,11 +4,11 @@ Doing this challenge was interesting; I learnt new things that I probably would 
 
 **In general, I tried to implement some design principles such as`SOLID principle` and `DRY principle`.**
 
-**Here are that things I learnt for each stage of this challenge;**
+**Here are the things I learnt for each stage of this challenge;**
 
 Registration
 ------------
-This was very easy to `curl` in the commandline. However, converting the `curl` to its Ruby equivalent wasn't an easy feat. But I researched and found the `HTTParty gem`, I studied and was able to implement. 
+This was very easy to `curl` in the commandline. However, converting the `curl` to its Ruby equivalent wasn't an easy feat. But I researched and found the `HTTParty gem`, which I studied and was able to implement. 
 
 Stage I
 -------
