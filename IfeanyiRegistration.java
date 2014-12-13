@@ -7,7 +7,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.*;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import com.google.gson.*;
+import com.google.gson.Gson;
 /**
  * @author Ifeanyi Kalu
  *
@@ -20,8 +20,7 @@ public class IfeanyiRegistration {
 
 		Registration ifeanyi = new Registration();	
 		HttpPost post = new HttpPost(endPoint);	
-		GsonBuilder builder = new GsonBuilder();
-		Gson gson = builder.create();
+		Gson gson = new Gson();
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		ifeanyi.email = "ifkalu@yahoo.com";
