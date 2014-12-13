@@ -1,13 +1,10 @@
 import java.io.*;
-import java.lang.*;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.*;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import com.google.gson.Gson;
+
 /**
  * @author Ifeanyi Kalu
  *
