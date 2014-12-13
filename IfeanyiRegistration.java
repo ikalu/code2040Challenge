@@ -15,19 +15,13 @@ import com.google.gson.*;
 
 public class IfeanyiRegistration {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args ) throws IOException {
-		// TODO Auto-generated method stub
 		String endPoint = "http://challenge.code2040.org/api/register";
 
 		Registration ifeanyi = new Registration();	
 		HttpPost post = new HttpPost(endPoint);	
-		/*GsonBuilder builder = new GsonBuilder();
-		Gson gson = builder.create();*/
-		
-		Gson gson = new Gson();
+		GsonBuilder builder = new GsonBuilder();
+		Gson gson = builder.create();
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		ifeanyi.email = "ifkalu@yahoo.com";
@@ -45,7 +39,6 @@ public class IfeanyiRegistration {
 				System.out.println(output);
 			}
 		} catch (Exception handle) {
-			// TODO Auto-generated catch block
 			handle.printStackTrace();			
 		} finally {
 			httpclient.close();
