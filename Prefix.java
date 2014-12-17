@@ -108,8 +108,7 @@ public class Prefix {
 		ifeanyi.setToken("8EBDqKCWgK");
 		ifeanyi.setArray(input);
 
-		HttpPost post = new HttpPost(endPoint);	//HttpPost instance
-		
+		HttpPost post = new HttpPost(endPoint);	//HttpPost instance		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		/* Use Gson to convert to Json and
